@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>To do list</title>
+    </head>
+    <body>
+        <div class="todo">
+            <div class="header">
+              <h1>Liste des choses à faire</h1>
+              <input type="text" class="input" placeholder="Tâche à faire">
+              <button class="add-btn">Ajouter</button>
+              <select name="todos" id="filter-todo" class="select">
+                <option value="all">Toutes</option>
+                <option value="completed">Complété</option>
+                <option value="uncompleted">A faire</option>
+              </select>
+            </div>
+          
+            <div class="todo-list">
+              <h3>Liste des tâches</h3>
+              <p class="alert-info">La liste est vide</p>
+              
+              <ul>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="popup">
+            <h3>Editer tâche:</h3>
+            <div class="popup-body">
+              <p class="popup-info"></p>
+              <input type="text" class="popup-input" placeholder="Editer ta tâche">
+              <button class="popup-btn accept">Envoyer</button>
+              <button class="popup-btn cancel">Annuler</button>
+            </div>
+          </div>
+        <script src="/javaScript/javascript.js"></script>
+        <script src="https://kit.fontawesome.com/d097b07edc.js" crossorigin="anonymous"></script>
+
+    </body>
+</html>
