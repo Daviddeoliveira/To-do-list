@@ -34,7 +34,6 @@ function createNewTodo() {
     todoLis.push(li);
     input.value = "";
     handleEmptyListMessage();
-    addEventsDragAndDrop(li);
   }
 }
 
@@ -49,7 +48,7 @@ function deleteTodo(e) {
   let todoToDelete = e.target.closest("li");
   deleteTodoAndChangeArrayOfTodos(todoToDelete);
   handleEmptyListMessage();
-  console.log(todoLis.length);
+  //console.log(todoLis.length);
 }
 
 function completedTodo(e) {
@@ -111,6 +110,7 @@ function handleEmptyListMessage() {
 
 handleEmptyListMessage();
 
+//Filter les tâche par catégorie
 function filterTodo(e){
   let todos = todoLis;
   console.log(todos);
@@ -135,6 +135,27 @@ function filterTodo(e){
           break;
     }
   });
+}
+
+//Drag and Drop
+
+//Déplacer une tâche
+function dragStart(e){
+  e.dataTransfert.effectAllowed="move";
+  e.dataTransfert.setData("text", e.target.getAttribute("id"));
+}
+
+//return false
+function dragOver(e){
+  return false;
+}
+
+//Deposer une tâche
+function drop(e){
+  let ta = e.dataTransfert.getData("text");
+  e.currentTarget.appendChild(document.getElementById(ta));
+  e.stopPropagation();
+  return false;
 }
 
 btnAdd.addEventListener("click", createNewTodo);
